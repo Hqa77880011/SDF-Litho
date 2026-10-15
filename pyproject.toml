@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sdf-litho"
+version = "0.1.0"
+description = "SDF-Litho: Continuous Signed-Distance Surrogate Learning for Layout-to-Wafer Contour Prediction under Fixed Process Conditions"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "scipy>=1.10", "torch>=2.2", "scikit-learn>=1.3", "matplotlib>=3.7", "pillow>=10"]
+
+[project.scripts]
+sdf-litho = "sdf_litho.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["sdf_litho*"]
+
+[project.optional-dependencies]
+image-metrics = ["lpips>=0.1.4", "pysodmetrics>=1.4"]
